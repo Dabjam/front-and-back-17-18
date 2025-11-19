@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Главная | Поздышев Эдуард</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="./images/icon.ico" type="image/x-icon">
+</head>
+
+<body data-theme="light" class="bg-light">
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    
+    <div id="live-region" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+    
+    <div class="container-fluid p-0 d-flex flex-column min-vh-100">
+        <header class="text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <picture>
+                            <source type="image/avif" srcset="./images/logo/logo-40.avif 40w,
+                                            ./images/logo/logo-80.avif 80w" sizes="40px">
+                            <source type="image/webp" srcset="./images/logo/logo-40.webp 40w,
+                                            ./images/logo/logo-80.webp 80w" sizes="40px">
+                            <img src="./images/logo-40.jpg" srcset="./images/logo/logo-40.jpg 40w,
+                                         ./images/logo/logo-80.jpg 80w" sizes="40px" width="40" height="40"
+                                style="border-radius: 16px;" alt="Логотип" class="logo" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="col">
+                        <h1 class="h3 mb-1 section-title">Поздышев Эдуард</h1>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-primary">ЭФБО-13-24</span>
+                        <button class="theme-toggle btn btn-link text-white ms-3" 
+                                onclick="toggleTheme()"
+                                aria-label="Переключить тему"
+                                aria-pressed="false">
+                            <span class="theme-icon" aria-hidden="true">🌓</span>
+                            Тема
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Основная навигация">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page"><i
+                                    class="bi bi-house me-1"></i>Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pages/projects.html"><i
+                                    class="bi bi-newspaper me-1"></i>Проекты</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pages/diary.html"><i
+                                    class="bi bi-code-slash me-1"></i>Дневник</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pages/contacts.html"><i
+                                    class="bi bi-telephone me-1"></i>Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main id="main" class="container my-5 flex-grow-1">
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h2 class="card-title h4 mb-0 section-title"><i class="bi bi-person-fill text-primary" aria-hidden="true"></i> Обо
+                            мне</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 text-center mb-3 mb-md-0">
+                                <figure>
+                                    <picture>
+                                        <source media="(min-width: 1200px)" type="image/avif"
+                                            srcset="./images/photo/photo-300.avif">
+                                        <source media="(min-width: 1200px)" type="image/webp"
+                                            srcset="./images/photo/photo-300.webp">
+                                        <source media="(min-width: 1200px)" srcset="./images/photo/photo-300.png">
+                                        <source media="(min-width: 768px)" type="image/avif"
+                                            srcset="./images/photo/photo-200.avif">
+                                        <source media="(min-width: 768px)" type="image/webp"
+                                            srcset="./images/photo/photo-200.webp">
+                                        <source media="(min-width: 768px)" srcset="./images/photo/photo-200.png">
+                                        <source media="(max-width: 767px)" type="image/avif"
+                                            srcset="./images/photo/photo-150.avif">
+                                        <source media="(max-width: 767px)" type="image/webp"
+                                            srcset="./images/photo/photo-150.webp">
+                                        <source media="(max-width: 767px)" srcset="./images/photo/photo-150.png">
+                                        <img class="hero__photo" src="./images/photo/photo-200.png" alt="Фотография студента Поздышева Эдуарда"
+                                            width="200" height="200" fetchpriority="high">
+                                    </picture>
+                                </figure>
+                            </div>
+                            <div class="col-md-9">
+                                <p class="card-text hero__greeting prose">Привет! Я студент группы ЭФБО-13-24. Увлекаюсь
+                                    веб-разработкой.</p>
+                                <a href="./assets/resume.pdf" class="btn btn-primary dowloand_resume" download aria-describedby="resume-hint">
+                                    Скачать резюме
+                                </a>
+                                <div id="resume-hint" class="visually-hidden">Файл в формате PDF, размером примерно 1 МБ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h2 class="card-title h4 mb-0 section-title"><i class="bi bi-aspect-ratio text-primary" aria-hidden="true"></i>
+                            Демонстрация Object-fit</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="object-fit-demo-container"
+                                    style="width: 100%; height: 200px; overflow: hidden; border: 2px solid var(--border-card);">
+                                    <img src="./images/projects/project_2-300.jpg" alt="Пример object-fit cover - изображение заполняет контейнер с сохранением пропорций"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <p class="mt-2">object-fit: cover</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="object-fit-demo-container"
+                                    style="width: 100%; height: 200px; overflow: hidden; border: 2px solid var(--border-card);">
+                                    <img src="./images/projects/project_2-300.jpg" alt="Пример object-fit contain - изображение полностью помещается в контейнер с сохранением пропорций"
+                                        style="width: 100%; height: 100%; object-fit: contain; background: #f8f9fa;">
+                                </div>
+                                <p class="mt-2">object-fit: contain</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="object-fit-demo-container"
+                                    style="width: 100%; height: 200px; overflow: hidden; border: 2px solid var(--border-card);">
+                                    <img src="./images/projects/project_2-300.jpg" alt="Пример object-fit fill - изображение растягивается по размерам контейнера"
+                                        style="width: 100%; height: 100%; object-fit: fill;">
+                                </div>
+                                <p class="mt-2">object-fit: fill</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h2 class="card-title h4 mb-0 section-title"><i class="bi bi-tools text-primary" aria-hidden="true"></i> Мои навыки
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span id="html-label">HTML/CSS</span>
+                                        <span class="text-primary" aria-labelledby="html-label">90%</span>
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-labelledby="html-label" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="height: 12px;">
+                                        <div class="progress-bar bg-primary" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span id="js-label">JavaScript</span>
+                                        <span class="text-primary" aria-labelledby="js-label">80%</span>
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-labelledby="js-label" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="height: 12px;">
+                                        <div class="progress-bar bg-success" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span id="bootstrap-label">Bootstrap</span>
+                                        <span class="text-primary" aria-labelledby="bootstrap-label">85%</span>
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-labelledby="bootstrap-label" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="height: 12px;">
+                                        <div class="progress-bar bg-info" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span id="react-label">React</span>
+                                        <span class="text-primary" aria-labelledby="react-label">60%</span>
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-labelledby="react-label" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="height: 12px;">
+                                        <div class="progress-bar bg-warning" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-5 projects-area">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h2 class="card-title h4 mb-0 section-title"><i class="bi bi-folder-fill text-primary" aria-hidden="true"></i>
+                            Лучшие проекты</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="projects-list projects-preview__grid">
+                            <div class="project-card" tabindex="0" role="button" aria-label="Проект 1: Личный сайт - подробнее">
+                                <picture>
+                                    <source media="(min-width: 1200px)" srcset="./images/projects/project_2-600.jpg">
+                                    <source media="(min-width: 768px)" srcset="./images/projects/project_2-300.jpg">
+                                    <img src="./images/projects/project_2-300.jpg" class="card-img-top" alt="Скриншот личного сайта проекта 1"
+                                        style="height: 150px; object-fit: cover;">
+                                </picture>
+                                <div class="card-body">
+                                    <h3 class="project-card__title h5">П1: Личный сайт</h3>
+                                    <p class="project-card__description small text-muted">Адаптивный личный сайт с
+                                        уникальным дизайном, созданный с использованием HTML и CSS. Поддерживает светлую
+                                        и темную темы.</p>
+                                    <div class="mb-2"><span class="badge bg-primary">HTML/CSS</span></div>
+                                </div>
+                            </div>
+                            <div class="project-card card--selected" tabindex="0" role="button" aria-label="Проект 2: Todo-приложение - подробнее">
+                                <picture>
+                                    <source media="(min-width: 1200px)" srcset="./images/projects/project_2-600.jpg">
+                                    <source media="(min-width: 768px)" srcset="./images/projects/project_2-300.jpg">
+                                    <img src="./images/projects/project_2-300.jpg" class="card-img-top" alt="Скриншот Todo-приложения проекта 2"
+                                        style="height: 150px; object-fit: cover;">
+                                </picture>
+                                <div class="card-body">
+                                    <h3 class="project-card__title h5">П2: Todo-приложение</h3>
+                                    <p class="project-card__description small text-muted">Интерактивное приложение для
+                                        управления задачами с функциями добавления, редактирования и удаления,
+                                        написанное на JavaScript.</p>
+                                    <div class="mb-2"><span class="badge bg-success">JavaScript</span></div>
+                                </div>
+                            </div>
+                            <div class="project-card" tabindex="0" role="button" aria-label="Проект 3: Интернет-магазин - подробнее">
+                                <picture>
+                                    <source media="(min-width: 1200px)" srcset="./images/projects/project_2-600.jpg">
+                                    <source media="(min-width: 768px)" srcset="./images/projects/project_2-300.jpg">
+                                    <img src="./images/projects/project_2-300.jpg" class="card-img-top" alt="Скриншот интернет-магазина проекта 3"
+                                        style="height: 150px; object-fit: cover;">
+                                </picture>
+                                <div class="card-body">
+                                    <h3 class="project-card__title h5">П3: Интернет-магазин</h3>
+                                    <p class="project-card__description small text-muted">Онлайн-магазин с корзиной
+                                        покупок и фильтрацией товаров, реализованный с использованием React для
+                                        динамического интерфейса.</p>
+                                    <div class="mb-2"><span class="badge bg-info">React</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">© 2025 Портфолио. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="pages/contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/script.js"></script>
+
+
+</body>
+
+</html>
