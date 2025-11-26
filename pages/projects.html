@@ -14,7 +14,6 @@
 <body data-theme="light" class="bg-light">
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
     
-    <!-- Живой регион для уведомлений -->
     <div id="live-region" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
 
     <div class="container-fluid p-0 d-flex flex-column min-vh-100">
@@ -23,20 +22,22 @@
                 <div class="row align-items-center">
                     <div class="col-auto">
                         <picture>
-                            <source type="image/avif" srcset="../images/logo/logo-40.avif 40w,
+                            <source type="image/avif" 
+                                    srcset="../images/logo/logo-40.avif 40w,
                                             ../images/logo/logo-80.avif 80w" sizes="40px">
-                            <source type="image/webp" srcset="../images/logo/logo-40.webp 40w,
+                            <source type="image/webp" 
+                                    srcset="../images/logo/logo-40.webp 40w,
                                             ../images/logo/logo-80.webp 80w" sizes="40px">
-                            <img src="../images/logo-40.jpg" srcset="../images/logo/logo-40.jpg 40w,
+                            <img src="../images/logo/logo-40.jpg" 
+                                 srcset="../images/logo/logo-40.jpg 40w,
                                          ../images/logo/logo-80.jpg 80w" sizes="40px" width="40" height="40"
                                 style="border-radius: 16px;" alt="Логотип" class="logo" loading="lazy">
                         </picture>
                     </div>
                     <div class="col">
-                        <h1 class="h3 mb-1 section-title">Поздышев Эдуард</h1>
+                        <h1 class="h3 mb-1 section-title">Мои проекты</h1>
                     </div>
                     <div class="col-auto">
-                        <span class="badge bg-light text-primary">ЭФБО-13-24</span>
                         <button class="theme-toggle btn btn-link text-white ms-3" 
                                 onclick="toggleTheme()"
                                 aria-label="Переключить тему"
@@ -74,63 +75,95 @@
             <section class="mb-5 projects-area">
                 <div class="card shadow-sm">
                     <div class="card-header bg-light">
-                        <h2 class="card-title h4 mb-0 section-title">Мои проекты</h2>
+                        <h2 class="card-title h4 mb-0 section-title"><i class="bi bi-folder-fill text-primary" aria-hidden="true"></i> Список проектов
+                        </h2>
                     </div>
                     <div class="card-body">
-                        <div class="mb-4" role="toolbar" aria-label="Фильтры проектов">
-                            <button class="btn btn-primary me-2 filter-btn active" data-filter="all" aria-pressed="true">Все</button>
-                            <button class="btn btn-primary me-2 filter-btn" data-filter="html" aria-pressed="false">HTML/CSS</button>
-                            <button class="btn btn-primary me-2 filter-btn" data-filter="js" aria-pressed="false">JavaScript</button>
-                            <button class="btn btn-primary filter-btn" data-filter="react" aria-pressed="false">React</button>
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="searchInput" class="visually-hidden">Поиск по проектам</label>
+                                <input type="search" class="form-control search_input" id="searchInput"
+                                    placeholder="Поиск по проектам..." aria-label="Поиск по проектам">
+                            </div>
+                            <div class="col-md-6 d-flex justify-content-md-end">
+                                <div class="btn-group" role="group" aria-label="Фильтр проектов">
+                                    <button type="button" class="btn btn-outline-primary active filter" 
+                                            data-filter="all" 
+                                            aria-pressed="true"
+                                            role="button"
+                                            onclick="filterProjects(this)">Все</button>
+                                    <button type="button" class="btn btn-outline-primary filter" 
+                                            data-filter="htmlcss"
+                                            aria-pressed="false"
+                                            role="button"
+                                            onclick="filterProjects(this)">HTML/CSS</button>
+                                    <button type="button" class="btn btn-outline-primary filter" 
+                                            data-filter="javascript"
+                                            aria-pressed="false"
+                                            role="button"
+                                            onclick="filterProjects(this)">JavaScript</button>
+                                    <button type="button" class="btn btn-outline-primary filter" 
+                                            data-filter="react"
+                                            aria-pressed="false"
+                                            role="button"
+                                            onclick="filterProjects(this)">React</button>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="projects-list projects-preview__grid">
-
-                            <div class="project-card" data-category="html" data-bs-toggle="modal"
-                                data-bs-target="#modal1" tabindex="0" role="button" aria-label="Личный сайт - подробнее">
-                                <picture>
-                                    <source media="(min-width: 1200px)" srcset="../images/projects/project_2-600.jpg">
-                                    <source media="(min-width: 768px)" srcset="../images/projects/project_2-300.jpg">
-                                    <img class="card-img-top" src="../images/projects/project_2-300.jpg"
-                                        alt="Скриншот личного сайта" style="height: 150px; object-fit: cover;" loading="lazy">
-                                </picture>
-                                <div class="card-body">
-                                    <h3 class="project-card__title h5">Личный сайт</h3>
-                                    <p class="project-card__description small text-muted">Адаптивный сайт с уникальным
-                                        дизайном...</p>
-                                    <div class="mb-2"><span class="badge bg-primary">HTML/CSS</span></div>
+                        <div class="projects-list row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+                            <div class="col project-card" data-category="htmlcss" tabindex="0" role="link" data-bs-toggle="modal"
+                                data-bs-target="#projectModal1" aria-label="Проект 1: Личный сайт - подробнее" aria-hidden="false">
+                                <div class="card h-100">
+                                    <picture>
+                                        <source media="(min-width: 1200px)" srcset="../images/projects/project_2-600.jpg">
+                                        <source media="(min-width: 768px)" srcset="../images/projects/project_2-300.jpg">
+                                        <img src="../images/projects/project_2-300.jpg" class="card-img-top"
+                                            alt="Скриншот личного сайта проекта 1" style="height: 150px; object-fit: cover;">
+                                    </picture>
+                                    <div class="card-body">
+                                        <h3 class="card-title h5">П1: Личный сайт</h3>
+                                        <p class="card-text small text-muted">Адаптивный личный сайт с уникальным
+                                            дизайном, созданный с использованием HTML и CSS. Поддерживает светлую и
+                                            темную темы.</p>
+                                        <div class="mb-2"><span class="badge bg-primary">HTML/CSS</span></div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="project-card card--selected" data-category="js" data-bs-toggle="modal"
-                                data-bs-target="#modal2" tabindex="0" role="button" aria-label="Todo-приложение - подробнее">
-                                <picture>
-                                    <source media="(min-width: 1200px)" srcset="../images/projects/project_2-600.jpg">
-                                    <source media="(min-width: 768px)" srcset="../images/projects/project_2-300.jpg">
-                                    <img class="card-img-top" src="../images/projects/project_2-300.jpg"
-                                        alt="Скриншот Todo-приложения" style="height: 150px; object-fit: cover;" loading="lazy">
-                                </picture>
-                                <div class="card-body">
-                                    <h3 class="project-card__title h5">Todo-приложение</h3>
-                                    <p class="project-card__description small text-muted">Интерактивное приложение...
-                                    </p>
-                                    <div class="mb-2"><span class="badge bg-success">JavaScript</span></div>
+                            <div class="col project-card" data-category="javascript" tabindex="0" role="link" data-bs-toggle="modal"
+                                data-bs-target="#projectModal2" aria-label="Проект 2: Todo-приложение - подробнее" aria-hidden="false">
+                                <div class="card h-100">
+                                    <picture>
+                                        <source media="(min-width: 1200px)" srcset="../images/projects/project_2-600.jpg">
+                                        <source media="(min-width: 768px)" srcset="../images/projects/project_2-300.jpg">
+                                        <img src="../images/projects/project_2-300.jpg" class="card-img-top"
+                                            alt="Скриншот Todo-приложения проекта 2" style="height: 150px; object-fit: cover;">
+                                    </picture>
+                                    <div class="card-body">
+                                        <h3 class="card-title h5">П2: Todo-приложение</h3>
+                                        <p class="card-text small text-muted">Интерактивное приложение для управления
+                                            задачами с функциями добавления, редактирования и удаления, написанное на
+                                            JavaScript.</p>
+                                        <div class="mb-2"><span class="badge bg-success">JavaScript</span></div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="project-card" data-category="react" data-bs-toggle="modal"
-                                data-bs-target="#modal3" tabindex="0" role="button" aria-label="Интернет-магазин - подробнее">
-                                <picture>
-                                    <source media="(min-width: 1200px)" srcset="../images/projects/project_2-600.jpg">
-                                    <source media="(min-width: 768px)" srcset="../images/projects/project_2-300.jpg">
-                                    <img class="card-img-top" src="../images/projects/project_2-300.jpg"
-                                        alt="Скриншот интернет-магазина" style="height: 150px; object-fit: cover;" loading="lazy">
-                                </picture>
-                                <div class="card-body">
-                                    <h3 class="project-card__title h5">Интернет-магазин</h3>
-                                    <p class="project-card__description small text-muted">Онлайн-магазин с корзиной...
-                                    </p>
-                                    <div class="mb-2"><span class="badge bg-info">React</span></div>
+                            <div class="col project-card" data-category="react" tabindex="0" role="link" data-bs-toggle="modal"
+                                data-bs-target="#projectModal3" aria-label="Проект 3: Интернет-магазин - подробнее" aria-hidden="false">
+                                <div class="card h-100">
+                                    <picture>
+                                        <source media="(min-width: 1200px)" srcset="../images/projects/project_2-600.jpg">
+                                        <source media="(min-width: 768px)" srcset="../images/projects/project_2-300.jpg">
+                                        <img src="../images/projects/project_2-300.jpg" class="card-img-top"
+                                            alt="Скриншот интернет-магазина проекта 3" style="height: 150px; object-fit: cover;">
+                                    </picture>
+                                    <div class="card-body">
+                                        <h3 class="card-title h5">П3: Интернет-магазин</h3>
+                                        <p class="card-text small text-muted">Онлайн-магазин с корзиной покупок и
+                                            фильтрацией товаров, реализованный с использованием React для динамического
+                                            интерфейса.</p>
+                                        <div class="mb-2"><span class="badge bg-info">React</span></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -138,6 +171,47 @@
                 </div>
             </section>
         </main>
+
+        <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModal1Label">Проект 1: Личный сайт</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Подробное описание проекта личного сайта...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModal2Label">Проект 2: Todo-приложение</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Подробное описание Todo-приложения...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModal3Label">Проект 3: Интернет-магазин</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Подробное описание интернет-магазина...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <footer class="text-white py-4">
             <div class="container">
@@ -154,91 +228,47 @@
         </footer>
     </div>
 
-    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1-title" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title h5" id="modal1-title">Личный сайт</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Адаптивный личный сайт с уникальным дизайном, созданный с использованием HTML и CSS. Поддерживает светлую и темную темы. Сайт полностью адаптирован для мобильных устройств и имеет современный интерфейс.</p>
-                    <p><strong>Технологии:</strong> HTML5, CSS3, JavaScript, Bootstrap</p>
-                    <p><strong>Особенности:</strong> Адаптивный дизайн, темная тема, оптимизированная загрузка</p>
-                    <a href="#" class="btn btn-primary me-2" target="_blank" aria-label="Открыть живую версию личного сайта (новая вкладка)">Живая версия</a>
-                    <a href="https://github.com/Dabjam?tab=repositories" class="btn btn-secondary" target="_blank" aria-label="Посмотреть код на GitHub (новая вкладка)">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2-title" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title h5" id="modal2-title">Todo-приложение</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Интерактивное приложение для управления задачами с функциями добавления, редактирования и удаления, написанное на JavaScript. Приложение сохраняет данные в локальном хранилище браузера.</p>
-                    <p><strong>Технологии:</strong> JavaScript, HTML5, CSS3, Local Storage</p>
-                    <p><strong>Особенности:</strong> Drag & drop, фильтрация задач, темная тема</p>
-                    <a href="#" class="btn btn-primary me-2" target="_blank" aria-label="Открыть живую версию Todo-приложения (новая вкладка)">Живая версия</a>
-                    <a href="https://github.com/Dabjam?tab=repositories" class="btn btn-secondary" target="_blank" aria-label="Посмотреть код на GitHub (новая вкладка)">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3-title" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title h5" id="modal3-title">Интернет-магазин</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Онлайн-магазин с корзиной покупок и фильтрацией товаров, реализованный с использованием React для динамического интерфейса. Интегрирован с платежной системой и имеет административную панель.</p>
-                    <p><strong>Технологии:</strong> React, Node.js, MongoDB, Stripe API</p>
-                    <p><strong>Особенности:</strong> Корзина покупок, поиск товаров, система отзывов</p>
-                    <a href="#" class="btn btn-primary me-2" target="_blank" aria-label="Открыть живую версию интернет-магазина (новая вкладка)">Живая версия</a>
-                    <a href="https://github.com/Dabjam?tab=repositories" class="btn btn-secondary" target="_blank" aria-label="Посмотреть код на GitHub (новая вкладка)">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../scripts/script.js"></script>
+
     <script>
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => {
-                    b.classList.remove('active');
-                    b.setAttribute('aria-pressed', 'false');
-                });
-                btn.classList.add('active');
-                btn.setAttribute('aria-pressed', 'true');
+        // ВОССТАНОВЛЕННАЯ ФУНКЦИЯ ФИЛЬТРАЦИИ ПРОЕКТОВ
+        function filterProjects(btn) {
+            // Сброс активного состояния
+            document.querySelectorAll('.filter').forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+            });
+            
+            // Установка активного состояния
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
+            
+            const filter = btn.dataset.filter;
+            const liveRegion = document.getElementById('live-region');
+            const filterName = btn.textContent.trim();
+
+            document.querySelectorAll('.project-card').forEach(card => {
+                const shouldShow = filter === 'all' || card.dataset.category === filter;
                 
-                const filter = btn.dataset.filter;
-                document.querySelectorAll('.project-card').forEach(card => {
-                    const shouldShow = filter === 'all' || card.dataset.category === filter;
-                    card.style.display = shouldShow ? 'block' : 'none';
-                    
-                    if (shouldShow) {
-                        card.setAttribute('aria-hidden', 'false');
-                    } else {
-                        card.setAttribute('aria-hidden', 'true');
-                    }
-                });
+                // Используем пустое строковое значение, чтобы вернуть display к значению по умолчанию (display: block/flex/grid), 
+                // которое используется для колонки Bootstrap, или 'none' для скрытия.
+                card.style.display = shouldShow ? '' : 'none'; 
                 
-                const liveRegion = document.getElementById('live-region');
-                if (liveRegion) {
-                    const filterName = btn.textContent.trim();
-                    liveRegion.textContent = `Показаны проекты: ${filterName}`;
+                if (shouldShow) {
+                    card.setAttribute('aria-hidden', 'false');
+                } else {
+                    card.setAttribute('aria-hidden', 'true');
                 }
             });
-        });
 
+            // Обновление живого региона
+            if (liveRegion) {
+                liveRegion.textContent = `Показаны проекты: ${filterName}`;
+            }
+        }
+
+        // Логика фокуса модальных окон (для доступности)
         document.addEventListener('DOMContentLoaded', function() {
             const modals = document.querySelectorAll('.modal');
             modals.forEach(modal => {

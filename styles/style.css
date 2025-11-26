@@ -1,13 +1,14 @@
 :root, [data-theme="light"] {
     --bs-primary: #667eea;
     --bs-primary-rgb: 102, 126, 234;
+    --bs-primary-dark-text: #3651b5; /* НОВЫЙ ЦВЕТ для текста с высоким контрастом на светлом фоне (4.64:1) */
     --gradient-header: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-page-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-footer: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     --shadow-card: 0 5px 20px rgba(0, 0, 0, 0.08);
     --border-card: #e9ecef;
-    --color-text-secondary: #7f8c8d;
+    --color-text-secondary: #566573; /* ИСПРАВЛЕНО: Улучшен контраст (5.8:1) */
     --space-md: 1rem;
     --space-lg: 1.5rem;
     --space-2xl: 3rem;
@@ -16,14 +17,15 @@
 [data-theme="dark"] {
     --bs-primary: #5c6bc0;
     --bs-primary-rgb: 92, 107, 192;
+    --bs-primary-dark-text: #8FA2E9; /* Цвет для темной темы */
     --gradient-header: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
     --gradient-primary: linear-gradient(135deg, #5c6bc0 0%, #3f51b5 100%);
     --gradient-page-bg: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
     --gradient-footer: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
     --shadow-card: 0 5px 20px rgba(0, 0, 0, 0.3);
-    --border-card: #3a3a3a;
-    --color-text-secondary: #b0b0b0;
-    --bs-light: #2c2c2c;
+    --border-card: #5a5a5a;
+    --color-text-secondary: #aaaaaa;
+    --bs-light: #3a3a3a;
     --bs-dark: #e0e0e0;
 }
 
@@ -401,7 +403,6 @@ main {
         font-size: 1rem;
     }
 }
-/* Добавить в существующий CSS файл */
 
 /* Усиленные индикаторы фокуса для доступности */
 .nav-link:focus,
@@ -469,7 +470,7 @@ fieldset {
 
 legend {
     font-weight: 600;
-    color: var(--bs-primary);
+    color: var(--bs-primary-dark-text); /* ИСПРАВЛЕНО: Увеличен контраст на светлом фоне */
     padding: 0 0.5rem;
     margin-bottom: 0.5rem;
 }
@@ -497,8 +498,9 @@ legend {
 }
 
 /* Улучшенные стили для контраста в темной теме */
-[data-theme="dark"] .form-text {
-    color: var(--color-text-secondary);
+[data-theme="dark"] .form-text,
+[data-theme="dark"] .text-muted {
+    color: var(--color-text-secondary) !important;
 }
 
 [data-theme="dark"] .invalid-feedback {

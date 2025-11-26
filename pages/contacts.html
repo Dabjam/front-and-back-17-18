@@ -22,28 +22,20 @@
                         <picture>
                             <source type="image/avif" 
                                     srcset="../images/logo/logo-40.avif 40w,
-                                            ../images/logo/logo-80.avif 80w"
-                                    sizes="40px">
-                            <source type="image/webp"
+                                            ../images/logo/logo-80.avif 80w" sizes="40px">
+                            <source type="image/webp" 
                                     srcset="../images/logo/logo-40.webp 40w,
-                                            ../images/logo/logo-80.webp 80w"
-                                    sizes="40px">
-                            <img src="../images/logo-40.jpg" 
+                                            ../images/logo/logo-80.webp 80w" sizes="40px">
+                            <img src="../images/logo/logo-40.jpg" 
                                  srcset="../images/logo/logo-40.jpg 40w,
-                                         ../images/logo/logo-80.jpg 80w"
-                                 sizes="40px"
-                                 width="40" height="40"
-                                 style="border-radius: 16px;" 
-                                 alt="Логотип" 
-                                 class="logo"
-                                 loading="lazy">
+                                         ../images/logo/logo-80.jpg 80w" sizes="40px" width="40" height="40"
+                                style="border-radius: 16px;" alt="Логотип" class="logo" loading="lazy">
                         </picture>
                     </div>
                     <div class="col">
-                        <h1 class="h3 mb-1 section-title">Поздышев Эдуард</h1>
+                        <h1 class="h3 mb-1 section-title">Контакты</h1>
                     </div>
                     <div class="col-auto">
-                        <span class="badge bg-light text-primary">ЭФБО-13-24</span>
                         <button class="theme-toggle btn btn-link text-white ms-3" 
                                 onclick="toggleTheme()"
                                 aria-label="Переключить тему"
@@ -64,10 +56,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house me-1"></i>Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html"><i class="bi bi-newspaper me-1"></i>Проекты</a></li>
-                        <li class="nav-item"><a class="nav-link" href="diary.html"><i class="bi bi-code-slash me-1"></i>Дневник</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="contacts.html" aria-current="page"><i class="bi bi-telephone me-1"></i>Контакты</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html"><i
+                                    class="bi bi-house me-1"></i>Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html"><i
+                                    class="bi bi-newspaper me-1"></i>Проекты</a></li>
+                        <li class="nav-item"><a class="nav-link" href="diary.html"><i
+                                    class="bi bi-code-slash me-1"></i>Дневник</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contacts.html" aria-current="page"><i
+                                    class="bi bi-telephone me-1"></i>Контакты</a></li>
                     </ul>
                 </div>
             </div>
@@ -77,79 +73,73 @@
             <section class="mb-5">
                 <div class="card shadow-sm">
                     <div class="card-header bg-light">
-                        <h2 class="card-title h4 mb-0 section-title">Свяжитесь со мной</h2>
+                        <h2 class="card-title h4 mb-0 section-title"><i class="bi bi-envelope-fill text-primary" aria-hidden="true"></i> Отправьте мне сообщение</h2>
                     </div>
                     <div class="card-body">
-                        <form id="contactForm" novalidate>
+                        <form id="contactForm" class="needs-validation" novalidate>
                             <fieldset>
-                                <legend class="h5 mb-3">Контактная информация</legend>
-                                
+                                <legend>Контактная информация</legend>
                                 <div class="mb-3">
-                                    <label for="name" class="form-label">
-                                        Имя <span class="text-danger" aria-hidden="true">*</span>
-                                    </label>
-                                    <input type="text" class="form-control" id="name" name="name" required 
-                                           pattern="[A-Za-zА-Яа-яЁё\s-]{2,50}"
-                                           aria-required="true"
-                                           aria-describedby="name-hint name-error"
-                                           aria-invalid="false">
-                                    <div id="name-hint" class="form-text">Введите ваше полное имя (2-50 символов)</div>
-                                    <div class="invalid-feedback" id="name-error" role="alert">Введите корректное имя (2-50 символов).</div>
+                                    <label for="name" class="form-label">Имя <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="name" name="name" required placeholder="Ваше имя">
+                                    <div class="invalid-feedback">Пожалуйста, введите ваше имя.</div>
                                 </div>
-                                
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">
-                                        Email <span class="text-danger" aria-hidden="true">*</span>
-                                    </label>
-                                    <input type="email" class="form-control" id="email" name="email" required
-                                           aria-required="true"
-                                           aria-describedby="email-hint email-error"
-                                           aria-invalid="false">
-                                    <div id="email-hint" class="form-text">Мы пришлём ответ на этот адрес</div>
-                                    <div class="invalid-feedback" id="email-error" role="alert">Введите корректный email.</div>
+                                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="email" required placeholder="example@domain.com"
+                                           aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">Мы никогда не передадим вашу электронную почту никому другому.</div>
+                                    <div class="invalid-feedback">Пожалуйста, введите корректный адрес электронной почты.</div>
                                 </div>
-                                
                                 <div class="mb-3">
-                                    <label for="message" class="form-label">
-                                        Сообщение <span class="text-danger" aria-hidden="true">*</span>
-                                    </label>
-                                    <textarea class="form-control" id="message" name="message" rows="4" required
-                                              aria-required="true"
-                                              aria-describedby="message-hint message-error"
-                                              aria-invalid="false"></textarea>
-                                    <div id="message-hint" class="form-text">Опишите ваше сообщение подробно</div>
-                                    <div class="invalid-feedback" id="message-error" role="alert">Сообщение не может быть пустым.</div>
+                                    <label for="message" class="form-label">Сообщение <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Ваше сообщение..."
+                                              aria-describedby="messageHelp"></textarea>
+                                    <div id="messageHelp" class="form-text">Максимальная длина 500 символов.</div>
+                                    <div class="invalid-feedback">Пожалуйста, введите сообщение.</div>
                                 </div>
-                                
-                                <button type="submit" class="btn btn-primary button">Отправить сообщение</button>
                             </fieldset>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+                                <label class="form-check-label" for="terms">Я согласен с 
+                                    <a href="#" 
+                                       data-bs-toggle="modal" 
+                                       data-bs-target="#privacyModal"
+                                       tabindex="0" 
+                                       role="link" 
+                                       aria-label="Открыть политику конфиденциальности">Политикой конфиденциальности</a></label>
+                                <div class="invalid-feedback">Вы должны согласиться с условиями.</div>
+                            </div>
+                            
+                            <div id="successMessage" class="alert alert-success mt-3 visually-hidden" role="alert" tabindex="-1">
+                                </div>
+                            
+                            <button type="submit" class="btn btn-primary dowloand_resume">Отправить сообщение</button>
                         </form>
-                        
-
-                        <div id="form-success" class="alert alert-success mt-3 visually-hidden" role="alert" aria-live="polite"></div>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h2 class="card-title h4 mb-0 section-title">Мои контакты</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="contact-info">
-                            <p><i class="bi bi-envelope-fill me-2" aria-hidden="true"></i> 
-                               <span>student@edu.ru</span></p>
-                            <p><a href="https://github.com/Dabjam" target="_blank" class="text-decoration-none"
-                                  aria-label="Мой GitHub профиль (откроется в новой вкладке)">
-                                  <i class="bi bi-github me-2" aria-hidden="true"></i> GitHub: Dabjam</a></p>
-                            <p><i class="bi bi-geo-alt-fill me-2" aria-hidden="true"></i> Москва, Россия</p>
-                        </div>
                     </div>
                 </div>
             </section>
         </main>
-
+        
+        <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="privacyModalLabel">Политика конфиденциальности</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Ваши данные будут использованы исключительно для ответа на ваш запрос. Мы не передаем вашу информацию третьим лицам.</p>
+                        <p>Нажимая "Отправить сообщение", вы соглашаетесь с условиями.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <footer class="text-white py-4">
             <div class="container">
                 <div class="row align-items-center">
@@ -166,90 +156,99 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/script.js"></script>
+
     <script>
-        function toggleTheme() {
-            const body = document.body;
-            const current = body.getAttribute('data-theme');
-            const newTheme = current === 'light' ? 'dark' : 'light';
-            const themeButton = document.querySelector('.theme-toggle');
-            
-            body.setAttribute('data-theme', newTheme);
-            themeButton.setAttribute('aria-pressed', newTheme === 'dark');
-            
-            const themeIcon = themeButton.querySelector('.theme-icon');
-            themeIcon.textContent = newTheme === 'light' ? '🌓' : '🌙';
-        
-            const liveRegion = document.getElementById('live-region');
-            liveRegion.textContent = `Тема изменена на ${newTheme === 'light' ? 'светлую' : 'тёмную'}`;
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
 
-
-        const form = document.getElementById('contactForm');
-        const successMessage = document.getElementById('form-success');
-        
-        function setFieldValidity(field, isValid) {
-            field.setAttribute('aria-invalid', !isValid);
-            
-            if (!isValid) {
-                field.setAttribute('aria-describedby', `${field.id}-error`);
-            } else {
-                const currentDescribedBy = field.getAttribute('aria-describedby');
-                if (currentDescribedBy && currentDescribedBy.includes('error')) {
-                    field.setAttribute('aria-describedby', currentDescribedBy.replace(`${field.id}-error`, '').trim());
+            // Функция для установки валидности полей
+            function setFieldValidity(field, isValid) {
+                if (isValid) {
+                    field.classList.remove('is-invalid');
+                    field.classList.add('is-valid');
+                } else {
+                    field.classList.remove('is-valid');
+                    field.classList.add('is-invalid');
                 }
             }
-        }
-        
 
-        form.querySelectorAll('input, textarea').forEach(field => {
-            field.addEventListener('blur', () => {
-                setFieldValidity(field, field.checkValidity());
-            });
-            
-            field.addEventListener('input', () => {
-                if (field.getAttribute('aria-invalid') === 'true') {
-                    setFieldValidity(field, field.checkValidity());
-                }
-            });
-        });
-        
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            
-            let isFormValid = true;
-            const firstInvalidField = null;
-            
-            form.querySelectorAll('input, textarea').forEach(field => {
-                const isValid = field.checkValidity();
-                setFieldValidity(field, isValid);
-                
-                if (!isValid && !firstInvalidField) {
-                    firstInvalidField = field;
-                }
-                isFormValid = isFormValid && isValid;
-            });
-            
-            if (isFormValid) {
-                successMessage.textContent = 'Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.';
-                successMessage.classList.remove('visually-hidden');
-                
-                form.reset();
-                form.classList.remove('was-validated');
-                
-                successMessage.focus();
-                
-                setTimeout(() => {
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    let isFormValid = true;
+                    let firstInvalidField = null;
+                    const fields = form.querySelectorAll('input, textarea');
+                    
+                    // Сбрасываем сообщение об успехе и состояние 'was-validated'
                     successMessage.classList.add('visually-hidden');
-                }, 5000);
-                
-            } else {
-                form.classList.add('was-validated');
-                if (firstInvalidField) {
-                    firstInvalidField.focus();
-                }
+                    form.classList.remove('was-validated');
+                    
+                    // Ручная проверка валидации
+                    fields.forEach(field => {
+                        const isValid = field.checkValidity();
+                        // Bootstrap управляет классами is-invalid/is-valid, когда добавлен класс .was-validated
+                        // Здесь мы делаем это вручную для большей надежности
+                        
+                        if (!isValid) {
+                            field.classList.remove('is-valid');
+                            field.classList.add('is-invalid');
+                        } else {
+                            field.classList.remove('is-invalid');
+                            field.classList.add('is-valid');
+                        }
+                        
+                        if (!isValid && !firstInvalidField) {
+                            firstInvalidField = field;
+                        }
+                        isFormValid = isFormValid && isValid;
+                    });
+                    
+                    if (isFormValid) {
+                        // 1. Показываем сообщение об успехе
+                        successMessage.textContent = 'Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.';
+                        successMessage.classList.remove('visually-hidden');
+                        
+                        // 2. Сбрасываем форму и классы валидации
+                        form.reset();
+                        form.querySelectorAll('.is-valid').forEach(el => {
+                            el.classList.remove('is-valid');
+                        });
+                        
+                        // 3. Фокусируемся на сообщении (для скринридеров)
+                        successMessage.focus();
+                        
+                        // 4. Скрываем через 5 секунд
+                        setTimeout(() => {
+                            successMessage.classList.add('visually-hidden');
+                        }, 5000);
+                        
+                        // Обновление живого региона для скринридеров
+                        const liveRegion = document.getElementById('live-region');
+                        if (liveRegion) {
+                            liveRegion.textContent = successMessage.textContent;
+                        }
+
+                    } else {
+                        // Показываем ошибки
+                        form.classList.add('was-validated');
+                        if (firstInvalidField) {
+                            firstInvalidField.focus();
+                        }
+                        
+                        // Обновление живого региона об ошибке
+                        const liveRegion = document.getElementById('live-region');
+                        if (liveRegion) {
+                            liveRegion.textContent = 'Ошибка отправки. Пожалуйста, проверьте отмеченные поля.';
+                        }
+                    }
+                });
             }
         });
-
+        
+        // Доступность: закрытие модального окна по Escape
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 const openModal = document.querySelector('.modal.show');

@@ -12,7 +12,6 @@
 <body data-theme="light" class="bg-light">
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
     
-    <!-- Живой регион для уведомлений -->
     <div id="live-region" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
 
     <div class="container-fluid p-0 d-flex flex-column min-vh-100">
@@ -23,28 +22,20 @@
                         <picture>
                             <source type="image/avif" 
                                     srcset="../images/logo/logo-40.avif 40w,
-                                            ../images/logo/logo-80.avif 80w"
-                                    sizes="40px">
-                            <source type="image/webp"
+                                            ../images/logo/logo-80.avif 80w" sizes="40px">
+                            <source type="image/webp" 
                                     srcset="../images/logo/logo-40.webp 40w,
-                                            ../images/logo/logo-80.webp 80w"
-                                    sizes="40px">
-                            <img src="../images/logo-40.jpg" 
+                                            ../images/logo/logo-80.webp 80w" sizes="40px">
+                            <img src="../images/logo/logo-40.jpg" 
                                  srcset="../images/logo/logo-40.jpg 40w,
-                                         ../images/logo/logo-80.jpg 80w"
-                                 sizes="40px"
-                                 width="40" height="40"
-                                 style="border-radius: 16px;" 
-                                 alt="Логотип" 
-                                 class="logo"
-                                 loading="lazy">
+                                         ../images/logo/logo-80.jpg 80w" sizes="40px" width="40" height="40"
+                                style="border-radius: 16px;" alt="Логотип" class="logo" loading="lazy">
                         </picture>
                     </div>
                     <div class="col">
-                        <h1 class="h3 mb-1 section-title">Поздышев Эдуард</h1>
+                        <h1 class="h3 mb-1 section-title">Дневник разработки</h1>
                     </div>
                     <div class="col-auto">
-                        <span class="badge bg-light text-primary">ЭФБО-13-24</span>
                         <button class="theme-toggle btn btn-link text-white ms-3" 
                                 onclick="toggleTheme()"
                                 aria-label="Переключить тему"
@@ -65,10 +56,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house me-1"></i>Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html"><i class="bi bi-newspaper me-1"></i>Проекты</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="diary.html" aria-current="page"><i class="bi bi-code-slash me-1"></i>Дневник</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contacts.html"><i class="bi bi-telephone me-1"></i>Контакты</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html"><i
+                                    class="bi bi-house me-1"></i>Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html"><i
+                                    class="bi bi-newspaper me-1"></i>Проекты</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="diary.html" aria-current="page"><i
+                                    class="bi bi-code-slash me-1"></i>Дневник</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacts.html"><i
+                                    class="bi bi-telephone me-1"></i>Контакты</a></li>
                     </ul>
                 </div>
             </div>
@@ -77,182 +72,96 @@
         <main id="main" class="container my-5 flex-grow-1">
             <section class="mb-5">
                 <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h2 class="card-title h4 mb-0 section-title"><i class="bi bi-book-fill text-primary" aria-hidden="true"></i> Мой учебный прогресс</h2>
+                    <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                        <h2 class="card-title h4 mb-0 section-title"><i class="bi bi-list-task text-primary" aria-hidden="true"></i> Список задач</h2>
+                        <button class="btn btn-primary dowloand_resume" data-bs-toggle="modal" data-bs-target="#addEntryModal">
+                            <i class="bi bi-plus-lg me-1" aria-hidden="true"></i> Добавить запись
+                        </button>
                     </div>
                     <div class="card-body">
-                        <ul class="list-group list-group-flush" id="progressList" aria-label="Список учебного прогресса">
-                            <li class="list-group-item">
-                                <span class="d-flex justify-content-between align-items-center">
-                                    <span>15 дек - Верстка макета сайта</span>
-                                    <span class="badge bg-success">Completed</span>
-                                </span>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="d-flex justify-content-between align-items-center">
-                                    <span>10 дек - JavaScript основы</span>
-                                    <span class="badge bg-success">Completed</span>
-                                </span>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="d-flex justify-content-between align-items-center">
-                                    <span>05 дек - Работа с формами</span>
-                                    <span class="badge bg-warning text-dark">in progress</span>
-                                </span>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="d-flex justify-content-between align-items-center">
-                                    <span>01 дек - Адаптивный дизайн</span>
-                                    <span class="badge bg-warning text-dark">in progress</span>
-                                </span>
-                            </li>
-                        </ul>
-                        <div class="text-center mt-3">
-                            <button class="btn btn-primary button" data-bs-toggle="modal" data-bs-target="#addEntryModal" aria-label="Добавить новую запись в дневник">
-                                Добавить запись
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-5">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h2 class="card-title h4 mb-0 section-title"><i class="bi bi-table text-primary" aria-hidden="true"></i> Таблица прогресса по курсам</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped" aria-describedby="table-description">
-                                <caption id="table-description" class="visually-hidden">Таблица прогресса обучения по различным курсам</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Курс</th>
-                                        <th scope="col">Дата начала</th>
-                                        <th scope="col">Прогресс</th>
-                                        <th scope="col">Статус</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Веб-разработка</th>
-                                        <td>01.12.2024</td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="me-2">90%</span>
-                                                <div class="progress flex-grow-1" style="height: 8px;">
-                                                    <div class="progress-bar bg-primary" style="width: 90%"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge bg-success">Завершен</span></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">JavaScript</th>
-                                        <td>10.12.2024</td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="me-2">70%</span>
-                                                <div class="progress flex-grow-1" style="height: 8px;">
-                                                    <div class="progress-bar bg-success" style="width: 70%"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge bg-warning text-dark">В процессе</span></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">React</th>
-                                        <td>05.12.2024</td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="me-2">50%</span>
-                                                <div class="progress flex-grow-1" style="height: 8px;">
-                                                    <div class="progress-bar bg-warning" style="width: 50%"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge bg-warning text-dark">В процессе</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-5 projects-area">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h2 class="card-title h4 mb-0 section-title"><i class="bi bi-laptop-fill text-primary" aria-hidden="true"></i> Текущие курсы</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="projects-list projects-preview__grid">
-                            <div class="project-card">
-                                <div class="mb-4">
-                                    <div class="d-flex justify-content-between mb-1">
-                                        <span id="web-course">Веб-разработка</span>
-                                        <span class="text-primary" aria-labelledby="web-course">90%</span>
-                                    </div>
-                                    <div class="progress" role="progressbar" aria-labelledby="web-course" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="height: 12px;">
-                                        <div class="progress-bar bg-primary" style="width: 90%"></div>
-                                    </div>
-                                </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-4 mb-lg-0">
+                                <h3 class="h5 border-bottom pb-2 mb-3">Запланировано</h3>
+                                <ul class="list-group" id="plannedList" aria-label="Запланированные задачи">
+                                    <li class="list-group-item">
+                                        <span class="d-flex justify-content-between align-items-center">
+                                            <span>2024-05-10 - Добавить анимацию загрузки</span>
+                                            <span class="badge bg-secondary">planned</span>
+                                        </span>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="project-card">
-                                <div class="mb-4">
-                                    <div class="d-flex justify-content-between mb-1">
-                                        <span id="js-course">JavaScript</span>
-                                        <span class="text-primary" aria-labelledby="js-course">70%</span>
-                                    </div>
-                                    <div class="progress" role="progressbar" aria-labelledby="js-course" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="height: 12px;">
-                                        <div class="progress-bar bg-success" style="width: 70%"></div>
-                                    </div>
-                                </div>
+                            <div class="col-lg-4 mb-4 mb-lg-0">
+                                <h3 class="h5 border-bottom pb-2 mb-3">В процессе</h3>
+                                <ul class="list-group" id="progressList" aria-label="Задачи в процессе выполнения">
+                                    <li class="list-group-item">
+                                        <span class="d-flex justify-content-between align-items-center">
+                                            <span>2024-05-15 - Улучшить адаптивность навигации</span>
+                                            <span class="badge bg-warning text-dark">in progress</span>
+                                        </span>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="project-card">
-                                <div class="mb-4">
-                                    <div class="d-flex justify-content-between mb-1">
-                                        <span id="react-course">React</span>
-                                        <span class="text-primary" aria-labelledby="react-course">50%</span>
-                                    </div>
-                                    <div class="progress" role="progressbar" aria-labelledby="react-course" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 12px;">
-                                        <div class="progress-bar bg-warning" style="width: 50%"></div>
-                                    </div>
-                                </div>
+                            <div class="col-lg-4">
+                                <h3 class="h5 border-bottom pb-2 mb-3">Завершено</h3>
+                                <ul class="list-group" id="completedList" aria-label="Завершенные задачи">
+                                    <li class="list-group-item">
+                                        <span class="d-flex justify-content-between align-items-center">
+                                            <span>2024-05-01 - Реализовать переключение тем</span>
+                                            <span class="badge bg-success">done</span>
+                                        </span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+        </main>
 
-            <div class="modal fade" id="addEntryModal" tabindex="-1" aria-labelledby="addEntryModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 class="modal-title h5" id="addEntryModalLabel">Добавить запись</h3>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                        </div>
+        <div class="modal fade" id="addEntryModal" tabindex="-1" aria-labelledby="addEntryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addEntryModalLabel">Добавить новую запись</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <form id="entryForm">
                         <div class="modal-body">
-                            <form id="entryForm">
+                            <fieldset>
+                                <legend class="visually-hidden">Данные новой записи</legend>
                                 <div class="mb-3">
                                     <label for="entryDate" class="form-label">Дата</label>
-                                    <input type="date" class="form-control" id="entryDate" required
-                                           aria-required="true">
+                                    <input type="date" class="form-control" id="entryDate" name="entryDate" required
+                                           aria-describedby="dateHelp">
+                                    <div id="dateHelp" class="form-text">Дата выполнения или планирования задачи.</div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="entryDescription" class="form-label">Описание</label>
-                                    <input type="text" class="form-control" id="entryDescription" required
-                                           aria-required="true"
-                                           aria-describedby="descriptionHelp">
-                                    <div id="descriptionHelp" class="form-text">Опишите, что вы изучили или над чем работали</div>
+                                    <label for="entryDescription" class="form-label">Описание задачи</label>
+                                    <textarea class="form-control" id="entryDescription" name="entryDescription" rows="3" required
+                                              aria-describedby="descriptionHelp"></textarea>
+                                    <div id="descriptionHelp" class="form-text">Подробное описание того, что было сделано или будет сделано.</div>
                                 </div>
-                                <button type="submit" class="btn btn-primary button">Добавить запись</button>
-                            </form>
+                                <div class="mb-3">
+                                    <label for="entryStatus" class="form-label">Статус</label>
+                                    <select class="form-select" id="entryStatus" name="entryStatus" required
+                                            aria-describedby="statusHelp">
+                                        <option value="planned">Запланировано</option>
+                                        <option value="progress">В процессе</option>
+                                        <option value="completed">Завершено</option>
+                                    </select>
+                                    <div id="statusHelp" class="form-text">Текущий статус задачи.</div>
+                                </div>
+                            </fieldset>
                         </div>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                            <button type="submit" class="btn btn-primary">Сохранить запись</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </main>
+        </div>
 
         <footer class="text-white py-4">
             <div class="container">
@@ -271,51 +180,86 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../scripts/script.js"></script>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('entryForm');
+            const plannedList = document.getElementById('plannedList');
             const progressList = document.getElementById('progressList');
+            const completedList = document.getElementById('completedList');
+            const liveRegion = document.getElementById('live-region');
 
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const date = new Date(document.getElementById('entryDate').value);
-                const description = document.getElementById('entryDescription').value;
-                
-                if (!date || !description) {
-                    return;
-                }
-                
-                const day = date.getDate();
-                const month = date.toLocaleString('ru', { month: 'short' });
-                const formattedDate = `${day} ${month}`;
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
 
-                const newEntry = document.createElement('li');
-                newEntry.classList.add('list-group-item');
-                newEntry.innerHTML = `
-                    <span class="d-flex justify-content-between align-items-center">
-                        <span>${formattedDate} - ${description}</span>
-                        <span class="badge bg-warning text-dark">in progress</span>
-                    </span>
-                `;
+                    const date = document.getElementById('entryDate').value;
+                    const description = document.getElementById('entryDescription').value;
+                    const status = document.getElementById('entryStatus').value;
 
-                progressList.appendChild(newEntry);
-                
-                // Обновляем живой регион
-                const liveRegion = document.getElementById('live-region');
-                if (liveRegion) {
-                    liveRegion.textContent = `Добавлена новая запись: ${formattedDate} - ${description}`;
-                }
-                
-                form.reset();
-                const modal = bootstrap.Modal.getInstance(document.getElementById('addEntryModal'));
-                if (modal) modal.hide();
-            });
+                    // Проверка минимальной валидации
+                    if (!date || !description || !status) return;
 
-            // Улучшенная доступность для модального окна
+                    const dateObject = new Date(date);
+                    // Форматирование даты в RU-формат ДД-ММ-ГГГГ
+                    const formattedDate = dateObject.toLocaleDateString('ru-RU', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit'
+                    }).replace(/\./g, '-');
+                    
+                    let statusClass = '';
+                    let targetList;
+                    let statusText = '';
+
+                    switch (status) {
+                        case 'planned':
+                            statusClass = 'bg-secondary';
+                            targetList = plannedList;
+                            statusText = 'planned';
+                            break;
+                        case 'progress':
+                            statusClass = 'bg-warning text-dark';
+                            targetList = progressList;
+                            statusText = 'in progress';
+                            break;
+                        case 'completed':
+                            statusClass = 'bg-success';
+                            targetList = completedList;
+                            statusText = 'done';
+                            break;
+                        default:
+                            return;
+                    }
+
+                    const newEntry = document.createElement('li');
+                    newEntry.classList.add('list-group-item');
+                    newEntry.innerHTML = `
+                        <span class="d-flex justify-content-between align-items-center">
+                            <span>${formattedDate} - ${description}</span>
+                            <span class="badge ${statusClass}">${statusText}</span>
+                        </span>
+                    `;
+
+                    targetList.appendChild(newEntry);
+                    
+                    // Обновляем живой регион
+                    if (liveRegion) {
+                        liveRegion.textContent = `Добавлена новая запись: ${description}. Статус: ${statusText}`;
+                    }
+                    
+                    form.reset();
+                    // Скрываем модальное окно с помощью Bootstrap API
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('addEntryModal'));
+                    if (modal) modal.hide();
+                });
+            }
+
+            // Улучшенная доступность для модального окна (фокус на первом поле)
             const addEntryModal = document.getElementById('addEntryModal');
             if (addEntryModal) {
                 addEntryModal.addEventListener('shown.bs.modal', function () {
-                    const firstInput = this.querySelector('input');
+                    const firstInput = this.querySelector('input, textarea, select');
                     if (firstInput) {
                         firstInput.focus();
                     }
